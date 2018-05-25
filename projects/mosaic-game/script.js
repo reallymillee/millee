@@ -26,7 +26,7 @@ function swapValues(number) {
     var tempStyle = document.getElementById("temp").innerHTML; // getting tempStyle
     var store = document.getElementById("temp1").innerHTML; // get number location
     document.getElementById(store).style.background = numberStyle; // setting store to number
-    document.getElementById(number).style.background = tempstyle; // setting number to temp
+    document.getElementById(number).style.background = tempStyle; // setting number to temp
     $(numberID).removeClass("is-primary");
     $("#" + store).removeClass("is-primary");
     document.getElementById("temp").innerHTML = "";
@@ -39,7 +39,7 @@ function check() {
   var i = 1;
   var value;
   do {
-    value = '"#num' + i + '"';
+    value = "#num" + i;
     var verify = stripJpg(value);
     console.log(verify, " ", i);
     if (verify == i) {
