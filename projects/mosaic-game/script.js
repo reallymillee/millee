@@ -8,15 +8,15 @@ window.onload = function randomNumbers() {
     } while (jQuery.inArray(rand, numbers) !== -1);
     numbers.push(rand);
     var value = "num" + i;
-    document.getElementById(value).innerHTML = rand;
-    $(value).css("background-image") = "url('projects/mosaic-game/" + rand + ".jpg')";
+    // document.getElementById(value).innerHTML = rand;
+    $(value).css("background-image") = ("url('projects/mosaic-game/" + rand + ".jpg')");
   }
   check();
 };
 
 function swapValues(number) {
   $("#" + number).addClass("is-primary");
-  var a = document.getElementById("temp").innerHTML; //check temp
+  var a = $("temp").css("background-image"); //check temp
   if (a == "") {
     document.getElementById("temp").innerHTML = $(number).css("background-image"); // get number value
     document.getElementById("temp1").innerHTML = number; // get number location
