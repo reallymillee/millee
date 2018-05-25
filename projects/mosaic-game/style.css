@@ -49,6 +49,6 @@ progress {
 
 progress:after {
   content: attr(value)'% complete';
-  position: absolute;
-  top: 51px;
+  position: relative;
+  top: -25px;
 }
