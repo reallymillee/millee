@@ -16,7 +16,7 @@ window.onload = function randomNumbers() {
 
 function swapValues(number) {
   var numberID = "#" + number;
-  $(numberID).addClass("is-primary");
+  $(numberID).addClass("selected");
   var a = document.getElementById("temp").innerHTML; //check temp
   if (a == "") {
     document.getElementById("temp").innerHTML = $(numberID).css("background"); // get number value
@@ -27,8 +27,8 @@ function swapValues(number) {
     var store = document.getElementById("temp1").innerHTML; // get number location
     document.getElementById(store).style.background = numberStyle; // setting store to number
     document.getElementById(number).style.background = tempStyle; // setting number to temp
-    $(numberID).removeClass("is-primary");
-    $("#" + store).removeClass("is-primary");
+    $(numberID).removeClass("selected");
+    $("#" + store).removeClass("selected");
     document.getElementById("temp").innerHTML = "";
     document.getElementById("temp1").innerHTML = "";
     check();
