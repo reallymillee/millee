@@ -9,7 +9,7 @@ window.onload = function randomNumbers() {
     numbers.push(rand);
     var value = "num" + i;
     // document.getElementById(value).innerHTML = rand;
-    $(value).css("background-image") = ("url('projects/mosaic-game/" + rand + ".jpg')");
+    $(value).css("background-image", "url('projects/mosaic-game/" + rand + ".jpg')");
   }
   check();
 };
@@ -22,8 +22,8 @@ function swapValues(number) {
     document.getElementById("temp1").innerHTML = number; // get number location
   } else {
     var store = document.getElementById("temp1").innerHTML; // get number location
-    $(store).css("background-image") = $(number).css("background-image"); // setting store to number
-    $(number).css("background-image") = $("temp").css("background-image");
+    $(store).css("background-image", ($(number).css("background-image")); // setting store to number
+    $(number).css("background-image", ($("temp").css("background-image"));
     $("#" + number).removeClass("is-primary");
     $("#" + store).removeClass("is-primary");
     document.getElementById("temp").innerHTML = "";
