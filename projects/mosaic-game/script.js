@@ -8,21 +8,22 @@ window.onload = function randomNumbers() {
     } while (jQuery.inArray(rand, numbers) !== -1);
     numbers.push(rand);
     var value = "num" + i;
-    document.getElementById(value).style.background-image = "url('projects/mosaic-game/" + rand + ".jpg')";
+    var image = "url('projects/mosaic-game/" + rand + ".jpg')";
+    document.getElementById(value).style.background = image;
   }
   check();
 };
 
 function swapValues(number) {
   $("#" + number).addClass("is-primary");
-  var a = $("temp").css("background-image"); //check temp
+  var a = $("temp").css("background"); //check temp
   if (a == "") {
-    document.getElementById("temp").innerHTML = document.getElementById(number).style.background-image; // get number value
+    document.getElementById("temp").innerHTML = document.getElementById(number).style.background; // get number value
     document.getElementById("temp1").innerHTML = number; // get number location
   } else {
     var store = document.getElementById("temp1").innerHTML; // get number location
-    document.getElementById(store).style.background-image = document.getElementById(number).style.background-image; // setting store to number
-    document.getElementById(number).style.background-image = document.getElementById("temp").style.background-image; // setting number to temp
+    document.getElementById(store).style.background = document.getElementById(number).style.background; // setting store to number
+    document.getElementById(number).style.background = document.getElementById("temp").style.background; // setting number to temp
     $("#" + number).removeClass("is-primary");
     $("#" + store).removeClass("is-primary");
     document.getElementById("temp").innerHTML = "";
@@ -56,7 +57,7 @@ function refreshPage() {
   window.location.reload();
 }
 function stripJpg(value) {
-  var num = document.getElementById(value).style.background-image;
+  var num = document.getElementById(value).style.background;
   num = num.replace(".jpg')","");
   num = num.replace("url('","");
   return num;
