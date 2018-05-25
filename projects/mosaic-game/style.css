@@ -9,3 +9,12 @@ th {
   width: 128px;
   height: 128px;
 }
+
+progress {
+  text-align: center;
+}
+progress:after {
+  content: attr(value)'% complete';
+  position: absolute;
+  top: 51px;
+}

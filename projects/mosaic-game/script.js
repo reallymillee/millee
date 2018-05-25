@@ -53,6 +53,13 @@ function check() {
   $("#progress").attr("value", progress);
   if (progress == 100) {
     $("#congrats").addClass("is-active");
+    $("#progress").removeClass("is-primary");
+    $("#progress").addClass("is-success");
+    var x = document.getElementsByTagName("tr");
+    var i;
+    for (i = 0; i < x.length; i++) {
+        x[i].style.border = "none";
+    }
   }
 }
 
