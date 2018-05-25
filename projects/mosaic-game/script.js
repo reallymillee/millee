@@ -8,8 +8,7 @@ window.onload = function randomNumbers() {
     } while (jQuery.inArray(rand, numbers) !== -1);
     numbers.push(rand);
     var value = "num" + i;
-    // document.getElementById(value).innerHTML = rand;
-    $(value).css("background-image", "url('projects/mosaic-game/" + rand + ".jpg')");
+    document.getElementById(value).style.background-image = "url('projects/mosaic-game/" + rand + ".jpg')";
   }
   check();
 };
@@ -18,12 +17,12 @@ function swapValues(number) {
   $("#" + number).addClass("is-primary");
   var a = $("temp").css("background-image"); //check temp
   if (a == "") {
-    document.getElementById("temp").innerHTML = $(number).css("background-image"); // get number value
+    document.getElementById("temp").innerHTML = document.getElementById(number).style.background-image; // get number value
     document.getElementById("temp1").innerHTML = number; // get number location
   } else {
-    var store = '"'+document.getElementById("temp1").innerHTML + '"'; // get number location
-    $(store).css("background-image", ($(number).css("background-image"))); // setting store to number
-    $(number).css("background-image", ($("temp").css("background-image")));
+    var store = document.getElementById("temp1").innerHTML; // get number location
+    document.getElementById(store).style.background-image = document.getElementById(number).style.background-image; // setting store to number
+    document.getElementById(number).style.background-image = document.getElementById("temp").style.background-image; // setting number to temp
     $("#" + number).removeClass("is-primary");
     $("#" + store).removeClass("is-primary");
     document.getElementById("temp").innerHTML = "";
@@ -37,8 +36,7 @@ function check() {
   var value;
   do {
     value = '"#num' + i + '"';
-    var verify = $(value).css("background-image");
-    verify = stripJpg(value);
+    var verify = stripJpg(value);
     console.log(verify, " ", i);
     if (verify == i) {
       i++;
@@ -58,7 +56,7 @@ function refreshPage() {
   window.location.reload();
 }
 function stripJpg(value) {
-  var num = $(value).css("background-image");
+  var num = document.getElementById(value).style.background-image;
   num = num.replace(".jpg')","");
   num = num.replace("url('","");
   return num;
