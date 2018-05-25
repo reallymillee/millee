@@ -55,10 +55,11 @@ function check() {
     $("#congrats").addClass("is-active");
     $("#progress").removeClass("is-primary");
     $("#progress").addClass("is-success");
-    var x = document.getElementsByTagName("tr");
+    var x = document.getElementsByTagName("th");
     var i;
     for (i = 0; i < x.length; i++) {
         x[i].style.border = "none";
+        x[i].removeAttribute("onclick");
     }
   }
 }
