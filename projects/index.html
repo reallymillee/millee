@@ -1,0 +1,11 @@
+---
+layout: default
+---
+<p class="title is-2">Projects</p>
+<p class="subtitle is-4">Various HTML/CSS/JS things.</p>
+<div class="box">
+  <div class="tags">
+    {% for item in site.projects %}
+    <a class="tag is-light" href="{{ item.url }}">{{ item.title }}</a> {% endfor %}
+  </div>
+</div>

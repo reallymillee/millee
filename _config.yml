@@ -1,0 +1,7 @@
+title: millee.ml
+baseurl: ""
+url: "http://millee.ml"
+collections:
+  projects:
+    output: false
+    permalink: /projects/:title
