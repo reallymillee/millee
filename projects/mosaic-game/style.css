@@ -32,6 +32,13 @@ progress:after {
   top: 51px;
 }
 
-.selected {
-  border-color: rgb(0, 209, 178);
+.selected:after {
+  position: absolute;
+  content: "";
+  margin: -32px -63px;
+  width: 128px;
+  height: 128px;
+  opacity: 0.2;
+  z-index: 10000;
+  background-color: white;
 }
