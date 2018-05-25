@@ -21,7 +21,7 @@ function swapValues(number) {
     document.getElementById("temp").innerHTML = $(number).css("background-image"); // get number value
     document.getElementById("temp1").innerHTML = number; // get number location
   } else {
-    var store = document.getElementById("temp1").innerHTML; // get number location
+    var store = '"'+document.getElementById("temp1").innerHTML + '"'; // get number location
     $(store).css("background-image", ($(number).css("background-image"))); // setting store to number
     $(number).css("background-image", ($("temp").css("background-image")));
     $("#" + number).removeClass("is-primary");
@@ -36,7 +36,7 @@ function check() {
   var i = 1;
   var value;
   do {
-    value = "num" + i;
+    value = '"#num' + i + '"';
     var verify = $(value).css("background-image");
     verify = stripJpg(value);
     console.log(verify, " ", i);
