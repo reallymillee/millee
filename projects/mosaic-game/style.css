@@ -13,12 +13,33 @@ th {
   padding: 1em !important;
 }
 
+.selected:after {
+  position: absolute;
+  content: "";
+  margin: -32px -63px;
+  width: 128px;
+  height: 128px;
+  opacity: 0.2;
+  z-index: 10000;
+  background-color: white;
+}
+
 @media only screen and (max-width: 768px) {
   th {
     background-size: contain !important;
     width: 64px;
     height: 64px;
     padding: 1em !important;
+  }
+  .selected:after {
+    position: absolute;
+    content: "";
+    margin: -32px;
+    width: 64px;
+    height: 64px;
+    opacity: 0.2;
+    z-index: 10000;
+    background-color: white;
   }
 }
 
@@ -30,15 +51,4 @@ progress:after {
   content: attr(value)'% complete';
   position: absolute;
   top: 51px;
-}
-
-.selected:after {
-  position: absolute;
-  content: "";
-  margin: -32px -63px;
-  width: 128px;
-  height: 128px;
-  opacity: 0.2;
-  z-index: 10000;
-  background-color: white;
 }
