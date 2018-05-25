@@ -64,3 +64,6 @@ function stripJpg(value) {
   num = num.match(/\d+/)[0];
   return num;
 }
+function closeModal() {
+  $("#congrats").removeClass("is-active");
+}
