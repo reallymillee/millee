@@ -5,7 +5,7 @@ br {
 .storage {
   display: none;
 }
-tr {
+th {
   width: 128px;
   height: 128px;
 }

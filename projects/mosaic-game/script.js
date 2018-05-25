@@ -18,11 +18,11 @@ function swapValues(number) {
   $("#" + number).addClass("is-primary");
   var a = $("temp").css("background"); //check temp
   if (a == "") {
-    document.getElementById("temp").innerHTML = document.getElementById(number).style.background; // get number value
+    document.getElementById("temp").innerHTML = $(number).css("background"); // get number value
     document.getElementById("temp1").innerHTML = number; // get number location
   } else {
-    var numberStyle = document.getElementById(number).style.background; // getting numberStyle
-    var tempStyle = document.getElementById("temp").style.background; // getting tempStyle
+    var numberStyle = $(number).css("background"); // getting numberStyle
+    var tempStyle = document.getElementById("temp").innerHTML; // getting tempStyle
     var store = document.getElementById("temp1").innerHTML; // get number location
     document.getElementById(store).style.background = numberStyle; // setting store to number
     document.getElementById(number).style.background = tempstyle; // setting number to temp
