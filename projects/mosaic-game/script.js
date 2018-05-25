@@ -9,7 +9,7 @@ window.onload = function randomNumbers() {
     numbers.push(rand);
     var value = "num" + i;
     document.getElementById(value).innerHTML = rand;
-    $(value).css("background-image") = "url('" + rand + ".jpg')";
+    $(value).css("background-image") = "url('projects/mosaic-game/" + rand + ".jpg')";
   }
   check();
 };
