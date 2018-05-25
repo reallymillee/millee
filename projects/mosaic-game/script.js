@@ -61,6 +61,6 @@ function refreshPage() {
 }
 function stripJpg(value) {
   var num = $(value).css("background-image");
-  num = num.replace("\D","");
+  num = num.match(/\d+/);
   return num;
 }
