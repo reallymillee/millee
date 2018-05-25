@@ -5,3 +5,7 @@ br {
 .storage {
   display: none;
 }
+tr {
+  width: 128px;
+  height: 128px;
+}

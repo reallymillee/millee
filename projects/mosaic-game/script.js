@@ -21,9 +21,11 @@ function swapValues(number) {
     document.getElementById("temp").innerHTML = document.getElementById(number).style.background; // get number value
     document.getElementById("temp1").innerHTML = number; // get number location
   } else {
+    var numberStyle = document.getElementById(number).style.background; // getting numberStyle
+    var tempStyle = document.getElementById("temp").style.background; // getting tempStyle
     var store = document.getElementById("temp1").innerHTML; // get number location
-    document.getElementById(store).style.background = document.getElementById(number).style.background; // setting store to number
-    document.getElementById(number).style.background = document.getElementById("temp").style.background; // setting number to temp
+    document.getElementById(store).style.background = numberStyle; // setting store to number
+    document.getElementById(number).style.background = tempstyle; // setting number to temp
     $("#" + number).removeClass("is-primary");
     $("#" + store).removeClass("is-primary");
     document.getElementById("temp").innerHTML = "";
