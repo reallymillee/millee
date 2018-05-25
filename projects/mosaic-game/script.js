@@ -15,18 +15,19 @@ window.onload = function randomNumbers() {
 };
 
 function swapValues(number) {
-  $("#" + number).addClass("is-primary");
-  var a = $("temp").css("background"); //check temp
+  var numberID = "#" + number;
+  $(numberID).addClass("is-primary");
+  var a = document.getElementById("temp").innerHTML; //check temp
   if (a == "") {
-    document.getElementById("temp").innerHTML = $(number).css("background"); // get number value
+    document.getElementById("temp").innerHTML = $(numberID).css("background"); // get number value
     document.getElementById("temp1").innerHTML = number; // get number location
   } else {
-    var numberStyle = $(number).css("background"); // getting numberStyle
+    var numberStyle = $(numberID).css("background"); // getting numberStyle
     var tempStyle = document.getElementById("temp").innerHTML; // getting tempStyle
     var store = document.getElementById("temp1").innerHTML; // get number location
     document.getElementById(store).style.background = numberStyle; // setting store to number
     document.getElementById(number).style.background = tempstyle; // setting number to temp
-    $("#" + number).removeClass("is-primary");
+    $(numberID).removeClass("is-primary");
     $("#" + store).removeClass("is-primary");
     document.getElementById("temp").innerHTML = "";
     document.getElementById("temp1").innerHTML = "";
