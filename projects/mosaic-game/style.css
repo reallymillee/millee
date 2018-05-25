@@ -5,14 +5,23 @@ br {
 .storage {
   display: none;
 }
+
 th {
   width: 128px;
   height: 128px;
 }
 
+@media only screen and (max-width: 768px) {
+  th {
+    width: 64px;
+    height: 64px;
+  }
+}
+
 progress {
   text-align: center;
 }
+
 progress:after {
   content: attr(value)'% complete';
   position: absolute;
