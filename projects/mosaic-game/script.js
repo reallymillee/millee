@@ -60,7 +60,7 @@ function refreshPage() {
   window.location.reload();
 }
 function stripJpg(value) {
-  var num = document.getElementById(value).style.background;
+  var num = $(value).css("background");
   num = num.replace(".jpg')","");
   num = num.replace("url('","");
   return num;
