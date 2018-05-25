@@ -2,9 +2,9 @@ window.onload = function randomNumbers() {
   var numbers = [];
   var i;
   var rand;
-  for (i = 1; i < 17; i++) {
+  for (i = 1; i < 26; i++) {
     do {
-      rand = Math.floor(Math.random() * 16 + 1);
+      rand = Math.floor(Math.random() * 25 + 1);
     } while (jQuery.inArray(rand, numbers) !== -1);
     numbers.push(rand);
     var value = "num" + i;
@@ -47,8 +47,8 @@ function check() {
     } else {
       break;
     }
-  } while (i < 17);
-  var progress = ((i - 1) / 16) * 100;
+  } while (i < 26);
+  var progress = ((i - 1) / 25) * 100;
   console.log((i - 1), " ", progress);
   $("#progress").attr("value", progress);
   if (progress == 100) {
@@ -60,8 +60,7 @@ function refreshPage() {
   window.location.reload();
 }
 function stripJpg(value) {
-  var num = $(value).css("background");
-  num = num.replace(".jpg')","");
-  num = num.replace("url('","");
+  var num = $(value).css("background-image");
+  num = num.replace("\D","");
   return num;
 }
