@@ -50,12 +50,18 @@ layout: default
       <div id="temp" class="hidden"></div>
       <div id="temp1" class="hidden"></div><br>
       <progress id="progress" class="progress is-primary is-large" value="0" max="100"></progress>
-      <div class="box">
-        <p id="moves"></p>
-      </div>
-      <div id="won" class="hidden">
-        <span class="icon is-large has-text-warning"><i class="fas fa-trophy"></i></span>
-        <a class="button is-light is-large" onclick="refreshPage()"><span class="icon has-text-success is-medium"><i class="fas fa-redo-alt"></i></span>&nbsp;Play Again!</a>
+      <div class="columns">
+        <div class="column">
+          <div class="box">
+            <p id="moves"></p>
+          </div>
+        </div>
+        <div class="column">
+          <div id="won" class="hidden">
+            <span class="icon is-large has-text-warning is-size-1"><i class="fas fa-trophy"></i></span>&nbsp;&nbsp;&nbsp;
+            <a class="button is-light is-large" onclick="refreshPage()"><span class="icon has-text-success is-medium"><i class="fas fa-redo-alt"></i></span>&nbsp;&nbsp;&nbsp;Play Again!</a>
+          </div>
+        </div>
       </div>
     </div>
   </div>

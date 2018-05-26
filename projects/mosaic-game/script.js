@@ -15,12 +15,17 @@ window.onload = function randomNumbers() {
 };
 
 var moves = 0;
-document.getElementById("moves").innerHTML = moves;
+document.getElementById("moves").innerHTML = moves + " moves";
 
 function move() {
   moves++;
-  document.getElementById("moves").innerHTML = moves + " moves";
+  if moves == 1 {
+    document.getElementById("moves").innerHTML = moves + " move";
+  } else {
+    document.getElementById("moves").innerHTML = moves + " moves";
+  }
 }
+
 function swapValues(number) {
   var numberID = "#" + number;
   $(numberID).addClass("selected");
@@ -68,8 +73,8 @@ function check() {
     var x = document.getElementsByTagName("th");
     var i;
     for (i = 0; i < x.length; i++) {
-        x[i].style.border = "none";
-        x[i].removeAttribute("onclick");
+      x[i].style.border = "none";
+      x[i].removeAttribute("onclick");
     }
   }
 }
@@ -77,11 +82,13 @@ function check() {
 function refreshPage() {
   window.location.reload();
 }
+
 function stripJpg(value) {
   var num = $(value).css("background-image");
   num = num.match(/\d+/)[0];
   return num;
 }
+
 function closeModal() {
   $("#congrats").removeClass("is-active");
 }
