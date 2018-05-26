@@ -1,10 +1,14 @@
-var date = (document.getElementById("prompt").value).split("-");
-var day = date[2];
-var month = date[1];
-var year = date[0];
+var date;
+var day;
+var month;
+var year;
 var mystery;
 var error;
 window.onload = function whatisit() {
+  date = (document.getElementById("prompt").value).split("-");
+  day = date[2];
+  month = date[1];
+  year = date[0];
   mystery = true; // 99% sure this is an error
   var lastDay;
   error = false;
