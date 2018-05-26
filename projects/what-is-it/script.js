@@ -4,6 +4,7 @@ var month;
 var year;
 var leapYear;
 var error;
+
 function whatIsIt() {
   var user = document.getElementById("prompt").value;
   date = user.split("-");
@@ -13,7 +14,7 @@ function whatIsIt() {
   leapYear = true;
   var lastDay;
   error = false;
-  switch(month) {
+  switch (month) {
     case 4:
     case 6:
     case 9:
@@ -45,28 +46,22 @@ function whatIsIt() {
     if ((day < 1) && (day > lastDay)) {
       error = true;
     }
-  displayResults();
+    displayResults();
   }
 };
+
 function checkLeapYear() {
-  var remainder = year%4;
-  console.log(remainder, 1);
-  if (remainder !== 0) {
+  if (year % 4 !== 0) {
     leapYear = false;
   } else {
-    remainder = year%100;
-    console.log(remainder, 2);
-    if (remainder !== 0) {
-      remainder = year%400;
-      console.log(remainder, 3);
-      if (remainder !== 0) {
-        leapYear = false;
-      } else {
-        leapYear = true;
-      }
+    if ((year % 100 === 0) && (year % 400 === 0)) {
+      leapYear = true;
+    } else {
+      leapYear = false;
     }
   }
 }
+
 function displayResults() {
   document.getElementById("leapYear").innerHTML = leapYear;
   document.getElementById("error").innerHTML = error;
