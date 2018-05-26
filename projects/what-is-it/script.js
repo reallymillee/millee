@@ -6,12 +6,10 @@ var leapYear;
 var error;
 
 function whatIsIt() {
-  var user = document.getElementById("prompt").value;
-  date = user.split("-");
-  day = parseInt(date[2]);
-  month = parseInt(date[1]);
-  year = parseInt(date[0]);
-  leapYear = true;
+  var day = parseInt(document.getElementById("day").value);
+  var day = parseInt(document.getElementById("month").value);
+  var day = parseInt(document.getElementById("year").value);
+//  leapYear = true;
   var lastDay;
   error = false;
   switch (month) {
@@ -42,7 +40,7 @@ function whatIsIt() {
       error = true;
       break;
   }
-  console.log(day, month, year, lastDay, leapYear);
+  console.log(day, month, year, lastDay, leapYear, error);
   if (error === false) {
     if ((day < 1) && (day > lastDay)) {
       error = true;
