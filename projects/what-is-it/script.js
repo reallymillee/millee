@@ -2,7 +2,7 @@ var date;
 var day;
 var month;
 var year;
-var mystery;
+var leapYear;
 var error;
 function whatIsIt() {
   var user = document.getElementById("prompt").value;
@@ -10,7 +10,7 @@ function whatIsIt() {
   day = parseInt(date[2]);
   month = parseInt(date[1]);
   year = parseInt(date[0]);
-  mystery = true;
+  leapYear = true;
   var lastDay;
   error = false;
   switch(month) {
@@ -29,8 +29,8 @@ function whatIsIt() {
       lastDay = 31;
       break;
     case 2:
-      checkMystery();
-      if (mystery) {
+      checkLeapYear();
+      if (leapYear) {
         lastDay = 29;
       } else {
         lastDay = 28;
@@ -40,7 +40,7 @@ function whatIsIt() {
       error = true;
       break;
   }
-  console.log(day, month, year, lastDay, mystery);
+  console.log(day, month, year, lastDay, leapYear);
   if (error === false) {
     if ((day < 1) && (day > lastDay)) {
       error = true;
@@ -48,29 +48,26 @@ function whatIsIt() {
   displayResults();
   }
 };
-function checkMystery() {
-  mystery = false;
-  var quotient = year/400;
-  console.log("Quotient: " + quotient);
-  var remainder = year-(400*quotient);
+function checkLeapYear() {
+  var remainder = year%4;
   console.log(remainder, 1);
-  if (remainder === 0) {
-    mystery = false;
+  if (remainder !== 0) {
+    leapYear = false;
   } else {
-    quotient = year/100;
-    remainder = year-(100*quotient);
+    remainder = year%100;
     console.log(remainder, 2);
-    if (remainder >= 0) {
-      quotient = year/4;
-      remainder = year - (4*quotient);
+    if (remainder !== 0) {
+      remainder = year%400;
       console.log(remainder, 3);
-      if (remainder === 0) {
-        mystery = false;
+      if (remainder !== 0) {
+        leapYear = false;
+      } else {
+        leapYear = true;
       }
     }
   }
 }
 function displayResults() {
-  document.getElementById("mystery").innerHTML = mystery;
+  document.getElementById("leapYear").innerHTML = leapYear;
   document.getElementById("error").innerHTML = error;
 }
