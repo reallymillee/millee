@@ -43,7 +43,7 @@ function whatIsIt() {
       break;
   }
   console.log(day, month, year, lastDay, leapYear);
-  if !(error) {
+  if (error === false) {
     if ((day < 1) && (day > lastDay)) {
       error = true;
     }
