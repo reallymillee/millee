@@ -7,23 +7,24 @@ layout: default
     <h1>date validator~</h1>
     <div class="field has-addons">
       <div class="control">
-        <input id="day" class="input is-large" type="text" placeholder="day" value="15">
+        <input id="day" class="input is-medium" type="text" placeholder="day" value="15">
       </div>
       <div class="control">
-        <input id="month" class="input is-large" type="text" placeholder="month" value "2">
+        <input id="month" class="input is-medium" type="text" placeholder="month" value="2">
       </div>
       <div class="control">
-        <input id="year" class="input is-large" type="text" placeholder="year" value="2001">
+        <input id="year" class="input is-medium" type="text" placeholder="year" value="2001">
       </div>
       <div class="control">
-        <a class="button is-info" onclick="whatIsIt()">
-      Start
-    </a>
+        <a class="button is-info is-medium" onclick="whatIsIt()">Start</a>
+      </div>
+      <div class="control">
+        <a id="leapYear" class="button is-static"></a>
+      </div>
+      <div class="control">
+        <a id="error" class="button is-static"></a>
       </div>
     </div>
-    <input id="prompt" class="input" type="text" value="2001-08-15">
-    <p id="leapYear"></p>
-    <p id="error"></p>
   </div>
 </section>
 <script type="text/javascript" src="projects/what-is-it/script.js"></script>
