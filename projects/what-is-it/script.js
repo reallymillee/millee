@@ -52,7 +52,7 @@ function whatIsIt() {
 };
 
 function checkLeapYear() {
-  if ((year % 400 === 0) || ((year % 100 === 0) && (year % 4 === 0))) {
+  if ((year % 400 === 0) || ((year % 100 !== 0) && (year % 4 === 0))) {
     leapYear = true;
   } else {
     leapYear = false;
