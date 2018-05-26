@@ -1,17 +1,15 @@
-var date;
 var day;
 var month;
 var year;
 var leapYear;
-var error;
+var error = false;
+var lastDay;
 
 function whatIsIt() {
   day = parseInt(document.getElementById("day").value);
   month = parseInt(document.getElementById("month").value);
   year = parseInt(document.getElementById("year").value);
   //  leapYear = true;
-  var lastDay;
-  error = false;
   switch (month) {
     case 4:
     case 6:
@@ -41,7 +39,7 @@ function whatIsIt() {
       break;
   }
   if (error === false) {
-    if ((day < 1) && (day > lastDay)) {
+    if ((day < 1) || (day > lastDay)) {
       error = true;
     }
   }
