@@ -15,11 +15,9 @@ window.onload = function randomNumbers() {
 };
 
 var moves = 0;
-document.getElementById("moves").innerHTML = moves + " moves";
-
 function move() {
   moves++;
-  if moves == 1 {
+  if (moves == 1) {
     document.getElementById("moves").innerHTML = moves + " move";
   } else {
     document.getElementById("moves").innerHTML = moves + " moves";
