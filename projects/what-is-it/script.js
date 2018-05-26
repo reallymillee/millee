@@ -40,6 +40,7 @@ function whatIsIt() {
       error = true;
       break;
   }
+  console.log(day, " ", month, " ", year, " ", lastDay, " ", mystery);
   if (error === false) {
     if ((day < 1) && (day > lastDay)) {
       error = true;
@@ -50,15 +51,19 @@ function whatIsIt() {
 function checkMystery() {
   mystery = false;
   var quotient = year/400;
+  console.log(quotient);
   var remainder = year-(400*quotient);
+  console.log(remainder, " 1");
   if (remainder === 0) {
     mystery = false;
   } else {
     quotient = year/100;
     remainder = year-(100*quotient);
+    console.log(remainder, " 1");
     if (remainder >= 0) {
       quotient = year/4;
       remainder = year - (4*quotient);
+      console.log(remainder, " 1");
       if (remainder === 0) {
         mystery = false;
       }
