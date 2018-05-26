@@ -7,28 +7,28 @@ var error;
 function whatIsIt() {
   var user = document.getElementById("prompt").value;
   date = user.split("-");
-  day = date[2];
-  month = date[1];
-  year = date[0];
+  day = parseInt(date[2]);
+  month = parseInt(date[1]);
+  year = parseInt(date[0]);
   //mystery = true;
   var lastDay;
   error = false;
   switch(month) {
-    case 04:
-    case 06:
-    case 09:
+    case 4:
+    case 6:
+    case 9:
     case 11:
       lastDay = 30;
       break;
-    case 01:
-    case 03:
-    case 05:
-    case 08:
+    case 1:
+    case 3:
+    case 5:
+    case 8:
     case 10:
     case 12:
       lastDay = 31;
       break;
-    case 02:
+    case 2:
       checkMystery();
       if (mystery) {
         lastDay = 29;
