@@ -6,10 +6,10 @@ var leapYear;
 var error;
 
 function whatIsIt() {
-  var day = parseInt(document.getElementById("day").value);
-  var month = parseInt(document.getElementById("month").value);
-  var year = parseInt(document.getElementById("year").value);
-//  leapYear = true;
+  day = parseInt(document.getElementById("day").value);
+  month = parseInt(document.getElementById("month").value);
+  year = parseInt(document.getElementById("year").value);
+  //  leapYear = true;
   var lastDay;
   error = false;
   switch (month) {
