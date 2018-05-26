@@ -10,25 +10,25 @@ function whatIsIt() {
   day = date[2];
   month = date[1];
   year = date[0];
-  mystery = true; // 99% sure this is an error
+  //mystery = true;
   var lastDay;
   error = false;
   switch(month) {
-    case 4:
-    case 6:
-    case 9:
+    case 04:
+    case 06:
+    case 09:
     case 11:
       lastDay = 30;
       break;
-    case 1:
-    case 3:
-    case 5:
-    case 8:
+    case 01:
+    case 03:
+    case 05:
+    case 08:
     case 10:
     case 12:
       lastDay = 31;
       break;
-    case 2:
+    case 02:
       checkMystery();
       if (mystery) {
         lastDay = 29;
