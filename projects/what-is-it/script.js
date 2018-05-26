@@ -40,13 +40,12 @@ function whatIsIt() {
       error = true;
       break;
   }
-  console.log(day, month, year, lastDay, leapYear, error);
   if (error === false) {
     if ((day < 1) && (day > lastDay)) {
       error = true;
     }
-    displayResults();
   }
+  displayResults();
 };
 
 function checkLeapYear() {
@@ -58,6 +57,7 @@ function checkLeapYear() {
 }
 
 function displayResults() {
+  console.log(day, month, year, lastDay, leapYear, error);
   document.getElementById("leapYear").innerHTML = leapYear;
   document.getElementById("error").innerHTML = error;
 }
