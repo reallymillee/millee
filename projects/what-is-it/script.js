@@ -4,6 +4,7 @@ var month;
 var year;
 var mystery;
 var error;
+var user;
 function whatIsIt() {
   user = document.getElementById("prompt").value;
   date = date.split("-");
