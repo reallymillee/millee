@@ -14,6 +14,13 @@ window.onload = function randomNumbers() {
   check();
 };
 
+var moves = 0;
+document.getElementById("moves").innerHTML = moves;
+
+function move() {
+  moves++;
+  document.getElementById("moves").innerHTML = moves + " moves";
+}
 function swapValues(number) {
   var numberID = "#" + number;
   $(numberID).addClass("selected");
@@ -32,6 +39,7 @@ function swapValues(number) {
     document.getElementById("temp").innerHTML = "";
     document.getElementById("temp1").innerHTML = "";
     check();
+    move();
   }
 }
 
@@ -52,7 +60,9 @@ function check() {
   console.log((i - 1), " ", progress);
   $("#progress").attr("value", progress);
   if (progress == 100) {
+    $("#won").addClass("is-active");
     $("#congrats").addClass("is-active");
+    $("#won").removeClass("hidden");
     $("#progress").removeClass("is-primary");
     $("#progress").addClass("is-success");
     var x = document.getElementsByTagName("th");

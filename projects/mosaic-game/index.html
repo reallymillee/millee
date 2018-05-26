@@ -47,9 +47,17 @@ layout: default
       </table>
     </div>
     <div class="column">
-      <div id="temp" class="storage"></div>
-      <div id="temp1" class="storage"></div><br>
-      <progress id="progress" class="progress is-primary is-large" value="0" max="100"></progress></div>
+      <div id="temp" class="hidden"></div>
+      <div id="temp1" class="hidden"></div><br>
+      <progress id="progress" class="progress is-primary is-large" value="0" max="100"></progress>
+      <div class="box">
+        <p id="moves"></p>
+      </div>
+      <div id="won" class="hidden">
+        <span class="icon is-large has-text-warning"><i class="fas fa-trophy"></i></span>
+        <a class="button is-light is-large" onclick="refreshPage()"><span class="icon has-text-success is-medium"><i class="fas fa-redo-alt"></i></span>&nbsp;Play Again!</a>
+      </div>
+    </div>
   </div>
   <div class="modal" id="congrats">
     <div class="modal-background"></div>
