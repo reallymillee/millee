@@ -24,6 +24,7 @@ function whatIsIt() {
     case 1:
     case 3:
     case 5:
+    case 7; // fixed error
     case 8:
     case 10:
     case 12:
@@ -51,14 +52,10 @@ function whatIsIt() {
 };
 
 function checkLeapYear() {
-  if (year % 4 !== 0) {
-    leapYear = false;
+  if ((year % 400 === 0) || ((year % 100 === 0) && (year % 4 === 0))) {
+    leapYear = true;
   } else {
-    if ((year % 100 === 0) && (year % 400 === 0)) {
-      leapYear = true;
-    } else {
-      leapYear = false;
-    }
+    leapYear = false;
   }
 }
 
