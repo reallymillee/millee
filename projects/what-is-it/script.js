@@ -67,6 +67,6 @@ function checkMystery() {
   }
 }
 function displayResults() {
-  document.getElementById("mystery").value = mystery;
-  document.getElementById("error").value = error;
+  document.getElementById("mystery").innerHTML = mystery;
+  document.getElementById("error").innerHTML = error;
 }
