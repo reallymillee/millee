@@ -25,7 +25,7 @@ window.onload = function whatisit() {
       var error = true;
   }
   if (error === false) {
-    if (day < 1) && (day > lastDay) {
+    if ((day < 1) && (day > lastDay)) {
       error = true;
     }
   displayResults();
