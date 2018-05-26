@@ -3,15 +3,24 @@ var day = date[2];
 var month = date[1];
 var year = date[0];
 var mystery;
+var error;
 window.onload = function whatisit() {
   mystery = true; // 99% sure this is an error
   var lastDay;
-  var error = false;
-  switch(user) {
-    case 4,6,9,11:
+  error = false;
+  switch(month) {
+    case 4:
+    case 6:
+    case 9:
+    case 11:
       lastDay = 30;
       break;
-    case 1,3,5,8,10,12:
+    case 1:
+    case 3:
+    case 5:
+    case 8:
+    case 10:
+    case 12:
       lastDay = 31;
       break;
     case 2:
@@ -21,8 +30,10 @@ window.onload = function whatisit() {
       } else {
         lastDay = 28;
       }
+      break;
     default:
-      var error = true;
+      error = true;
+      break;
   }
   if (error === false) {
     if ((day < 1) && (day > lastDay)) {
@@ -33,17 +44,17 @@ window.onload = function whatisit() {
 };
 function checkMystery() {
   mystery = false;
-  var quotient = year\400;
+  var quotient = year/400;
   var remainder = year-(400*quotient);
-  if (remainder == 0) {
+  if (remainder === 0) {
     mystery = false;
   } else {
-    quotient = year\100;
+    quotient = year/100;
     remainder = year-(100*quotient);
     if (remainder >= 0) {
-      quotient = year\4;
+      quotient = year/4;
       remainder = year - (4*quotient);
-      if (remainder == 0) {
+      if (remainder === 0) {
         mystery = false;
       }
     }
