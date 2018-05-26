@@ -10,7 +10,7 @@ function whatIsIt() {
   day = parseInt(date[2]);
   month = parseInt(date[1]);
   year = parseInt(date[0]);
-  //mystery = true;
+  mystery = true;
   var lastDay;
   error = false;
   switch(month) {
@@ -40,7 +40,7 @@ function whatIsIt() {
       error = true;
       break;
   }
-  console.log(day, " ", month, " ", year, " ", lastDay, " ", mystery);
+  console.log(day, month, year, lastDay, mystery);
   if (error === false) {
     if ((day < 1) && (day > lastDay)) {
       error = true;
@@ -51,19 +51,19 @@ function whatIsIt() {
 function checkMystery() {
   mystery = false;
   var quotient = year/400;
-  console.log(quotient);
+  console.log("Quotient: " + quotient);
   var remainder = year-(400*quotient);
-  console.log(remainder, " 1");
+  console.log(remainder, 1);
   if (remainder === 0) {
     mystery = false;
   } else {
     quotient = year/100;
     remainder = year-(100*quotient);
-    console.log(remainder, " 1");
+    console.log(remainder, 2);
     if (remainder >= 0) {
       quotient = year/4;
       remainder = year - (4*quotient);
-      console.log(remainder, " 1");
+      console.log(remainder, 3);
       if (remainder === 0) {
         mystery = false;
       }
