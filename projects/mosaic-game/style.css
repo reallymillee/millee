@@ -1,10 +1,14 @@
 .no-drag {
-  user-drag: none; 
+  user-drag: none;
   user-select: none;
   -moz-user-select: none;
   -webkit-user-drag: none;
   -webkit-user-select: none;
   -ms-user-select: none;
+}
+
+.grid {
+  margin-bottom: 0;
 }
 
 br {
@@ -21,8 +25,12 @@ th {
   min-height: 128px;
   padding: 1em !important;
 }
+.selected {
+  -webkit-filter: grayscale(1);
+  filter: grayscale(1);
+}
 
-.selected:after {
+/*.selected:after {
   position: absolute;
   content: "";
   margin: -32px -63px;
@@ -50,7 +58,7 @@ th {
     z-index: 10000;
     background-color: white;
   }
-}
+}*/
 
 progress {
   text-align: center;

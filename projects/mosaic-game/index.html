@@ -3,77 +3,214 @@ layout: default
 ---
 <link rel="stylesheet" type="text/css" href="projects/mosaic-game/style.css">
 <section class="section">
-<div class="container">
-  <div class="columns">
-    <div class="column">
-      <table class="table is-bordered is-size-3 has-text-centered">
-        <tbody>
-          <tr>
-            <th id="num1" class="has-text-centered" onclick="swapValues('num1')"></th>
-            <th id="num2" class="has-text-centered" onclick="swapValues('num2')"></th>
-            <th id="num3" class="has-text-centered" onclick="swapValues('num3')"></th>
-            <th id="num4" class="has-text-centered" onclick="swapValues('num4')"></th>
-            <th id="num5" class="has-text-centered" onclick="swapValues('num5')"></th>
-          </tr>
-          <tr>
-            <th id="num6" class="has-text-centered" onclick="swapValues('num6')"></th>
-            <th id="num7" class="has-text-centered" onclick="swapValues('num7')"></th>
-            <th id="num8" class="has-text-centered" onclick="swapValues('num8')"></th>
-            <th id="num9" class="has-text-centered" onclick="swapValues('num9')"></th>
-            <th id="num10" class="has-text-centered" onclick="swapValues('num10')"></th>
-          </tr>
-          <tr>
-            <th id="num11" class="has-text-centered" onclick="swapValues('num11')"></th>
-            <th id="num12" class="has-text-centered" onclick="swapValues('num12')"></th>
-            <th id="num13" class="has-text-centered" onclick="swapValues('num13')"></th>
-            <th id="num14" class="has-text-centered" onclick="swapValues('num14')"></th>
-            <th id="num15" class="has-text-centered" onclick="swapValues('num15')"></th>
-          </tr>
-          <tr>
-            <th id="num16" class="has-text-centered" onclick="swapValues('num16')"></th>
-            <th id="num17" class="has-text-centered" onclick="swapValues('num17')"></th>
-            <th id="num18" class="has-text-centered" onclick="swapValues('num18')"></th>
-            <th id="num19" class="has-text-centered" onclick="swapValues('num19')"></th>
-            <th id="num20" class="has-text-centered" onclick="swapValues('num20')"></th>
-          </tr>
-          <tr>
-            <th id="num21" class="has-text-centered" onclick="swapValues('num21')"></th>
-            <th id="num22" class="has-text-centered" onclick="swapValues('num22')"></th>
-            <th id="num23" class="has-text-centered" onclick="swapValues('num23')"></th>
-            <th id="num24" class="has-text-centered" onclick="swapValues('num24')"></th>
-            <th id="num25" class="has-text-centered" onclick="swapValues('num25')"></th>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="column">
-      <div id="temp" class="hidden"></div>
-      <div id="temp1" class="hidden"></div><br>
-      <progress id="progress" class="progress is-primary is-large" value="0" max="100"></progress>
-      <div class="columns">
-        <div class="column is-one-quarter has-text-centered is-size-5">
-          <div class="box section">
-            <p id="moves">0 moves</p>
+  <div class="container">
+    <div class="columns">
+      <!--<div class="column">
+        <table class="table is-bordered is-size-3 has-text-centered">
+          <tbody>
+            <tr>
+              <th id="num1" class="has-text-centered" onclick="swapValues('num1')"></th>
+              <th id="num2" class="has-text-centered" onclick="swapValues('num2')"></th>
+              <th id="num3" class="has-text-centered" onclick="swapValues('num3')"></th>
+              <th id="num4" class="has-text-centered" onclick="swapValues('num4')"></th>
+              <th id="num5" class="has-text-centered" onclick="swapValues('num5')"></th>
+            </tr>
+            <tr>
+              <th id="num6" class="has-text-centered" onclick="swapValues('num6')"></th>
+              <th id="num7" class="has-text-centered" onclick="swapValues('num7')"></th>
+              <th id="num8" class="has-text-centered" onclick="swapValues('num8')"></th>
+              <th id="num9" class="has-text-centered" onclick="swapValues('num9')"></th>
+              <th id="num10" class="has-text-centered" onclick="swapValues('num10')"></th>
+            </tr>
+            <tr>
+              <th id="num11" class="has-text-centered" onclick="swapValues('num11')"></th>
+              <th id="num12" class="has-text-centered" onclick="swapValues('num12')"></th>
+              <th id="num13" class="has-text-centered" onclick="swapValues('num13')"></th>
+              <th id="num14" class="has-text-centered" onclick="swapValues('num14')"></th>
+              <th id="num15" class="has-text-centered" onclick="swapValues('num15')"></th>
+            </tr>
+            <tr>
+              <th id="num16" class="has-text-centered" onclick="swapValues('num16')"></th>
+              <th id="num17" class="has-text-centered" onclick="swapValues('num17')"></th>
+              <th id="num18" class="has-text-centered" onclick="swapValues('num18')"></th>
+              <th id="num19" class="has-text-centered" onclick="swapValues('num19')"></th>
+              <th id="num20" class="has-text-centered" onclick="swapValues('num20')"></th>
+            </tr>
+            <tr>
+              <th id="num21" class="has-text-centered" onclick="swapValues('num21')"></th>
+              <th id="num22" class="has-text-centered" onclick="swapValues('num22')"></th>
+              <th id="num23" class="has-text-centered" onclick="swapValues('num23')"></th>
+              <th id="num24" class="has-text-centered" onclick="swapValues('num24')"></th>
+              <th id="num25" class="has-text-centered" onclick="swapValues('num25')"></th>
+            </tr>
+          </tbody>
+        </table>
+      </div>-->
+      <div class="column">
+        <div class="columns is-gapless is-mobile grid">
+          <div class="column">
+            <figure class="image is-square">
+              <img id="num1" class="no-drag" onclick="swapValues('num1')">
+            </figure>
+          </div>
+          <div class="column">
+            <figure class="image is-square">
+              <img id="num2" class="no-drag" onclick="swapValues('num2')">
+            </figure>
+          </div>
+          <div class="column">
+            <figure class="image is-square">
+              <img id="num3" class="no-drag" onclick="swapValues('num3')">
+            </figure>
+          </div>
+          <div class="column">
+            <figure class="image is-square">
+              <img id="num4" class="no-drag" onclick="swapValues('num4')">
+            </figure>
+          </div>
+          <div class="column">
+            <figure class="image is-square">
+              <img id="num5" class="no-drag" onclick="swapValues('num5')">
+            </figure>
           </div>
         </div>
-        <div class="column">
-          <div id="won" class="section hidden">
-            <span class="icon is-large has-text-warning is-size-1"><i class="fas fa-trophy"></i></span>&nbsp;&nbsp;&nbsp;
-            <a class="button is-light is-large" onclick="refreshPage()"><span class="icon has-text-success is-medium"><i class="fas fa-redo-alt"></i></span>&nbsp;&nbsp;&nbsp;Play Again!</a>
+        <div class="columns is-gapless is-mobile grid">
+          <div class="column">
+            <figure class="image is-square">
+              <img id="num6" class="no-drag" onclick="swapValues('num6')">
+            </figure>
+          </div>
+          <div class="column">
+            <figure class="image is-square">
+              <img id="num7" class="no-drag" onclick="swapValues('num7')">
+            </figure>
+          </div>
+          <div class="column">
+            <figure class="image is-square">
+              <img id="num8" class="no-drag" onclick="swapValues('num8')">
+            </figure>
+          </div>
+          <div class="column">
+            <figure class="image is-square">
+              <img id="num9" class="no-drag" onclick="swapValues('num9')">
+            </figure>
+          </div>
+          <div class="column">
+            <figure class="image is-square">
+              <img id="num10" class="no-drag" onclick="swapValues('num10')">
+            </figure>
+          </div>
+        </div>
+        <div class="columns is-gapless is-mobile grid">
+          <div class="column">
+            <figure class="image is-square">
+              <img id="num11" class="no-drag" onclick="swapValues('num11')">
+            </figure>
+          </div>
+          <div class="column">
+            <figure class="image is-square">
+              <img id="num12" class="no-drag" onclick="swapValues('num12')">
+            </figure>
+          </div>
+          <div class="column">
+            <figure class="image is-square">
+              <img id="num13" class="no-drag" onclick="swapValues('num13')">
+            </figure>
+          </div>
+          <div class="column">
+            <figure class="image is-square">
+              <img id="num14" class="no-drag" onclick="swapValues('num14')">
+            </figure>
+          </div>
+          <div class="column">
+            <figure class="image is-square">
+              <img id="num15" class="no-drag" onclick="swapValues('num15')">
+            </figure>
+          </div>
+        </div>
+        <div class="columns is-gapless is-mobile grid">
+          <div class="column">
+            <figure class="image is-square">
+              <img id="num16" class="no-drag" onclick="swapValues('num16')">
+            </figure>
+          </div>
+          <div class="column">
+            <figure class="image is-square">
+              <img id="num17" class="no-drag" onclick="swapValues('num17')">
+            </figure>
+          </div>
+          <div class="column">
+            <figure class="image is-square">
+              <img id="num18" class="no-drag" onclick="swapValues('num18')">
+            </figure>
+          </div>
+          <div class="column">
+            <figure class="image is-square">
+              <img id="num19" class="no-drag" onclick="swapValues('num19')">
+            </figure>
+          </div>
+          <div class="column">
+            <figure class="image is-square">
+              <img id="num20" class="no-drag" onclick="swapValues('num20')">
+            </figure>
+          </div>
+        </div>
+        <div class="columns is-gapless is-mobile grid">
+          <div class="column">
+            <figure class="image is-square">
+              <img id="num21" class="no-drag" onclick="swapValues('num21')">
+            </figure>
+          </div>
+          <div class="column">
+            <figure class="image is-square">
+              <img id="num22" class="no-drag" onclick="swapValues('num22')">
+            </figure>
+          </div>
+          <div class="column">
+            <figure class="image is-square">
+              <img id="num23" class="no-drag" onclick="swapValues('num23')">
+            </figure>
+          </div>
+          <div class="column">
+            <figure class="image is-square">
+              <img id="num24" class="no-drag" onclick="swapValues('num24')">
+            </figure>
+          </div>
+          <div class="column">
+            <figure class="image is-square">
+              <img id="num25" class="no-drag" onclick="swapValues('num25')">
+            </figure>
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <div id="temp" class="hidden"></div>
+        <div id="temp1" class="hidden"></div><br>
+        <progress id="progress" class="progress is-primary is-large" value="0" max="100"></progress>
+        <div class="columns">
+          <div class="column is-one-quarter has-text-centered is-size-5">
+            <div class="box section">
+              <p id="moves">0 moves</p>
+            </div>
+          </div>
+          <div class="column">
+            <div id="won" class="section hidden">
+              <span class="icon is-large has-text-warning is-size-1"><i class="fas fa-trophy"></i></span>&nbsp;&nbsp;&nbsp;
+              <a class="button is-light is-large" onclick="refreshPage()"><span class="icon has-text-success is-medium"><i class="fas fa-redo-alt"></i></span>&nbsp;&nbsp;&nbsp;Play Again!</a>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="modal" id="congrats">
-    <div class="modal-background"></div>
-    <div class="modal-content">
-      <div class="notification is-success is-size-3 has-text-centered">
-        <button class="delete" onclick="closeModal()"></button>
-        Congratulations!<br><a class="button is-light is-large" onclick="refreshPage()">Play Again!</a>
+    <div class="modal" id="congrats">
+      <div class="modal-background"></div>
+      <div class="modal-content">
+        <div class="notification is-success is-size-3 has-text-centered">
+          <button class="delete" onclick="closeModal()"></button> Congratulations!
+          <br><a class="button is-light is-large" onclick="refreshPage()">Play Again!</a>
+        </div>
       </div>
     </div>
   </div>
-</div>
 </section>
 <script type="text/javascript" src="projects/mosaic-game/script.js"></script>
