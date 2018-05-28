@@ -29,10 +29,10 @@ function swapValues(number) {
   $(numberID).addClass("selected");
   var a = document.getElementById("temp").innerHTML; //check temp
   if (a == "") {
-    document.getElementById("temp").innerHTML = $(numberID).src; // get number value
+    document.getElementById("temp").innerHTML = $(numberID).attr('src'); // get number value
     document.getElementById("temp1").innerHTML = number; // get number location
   } else {
-    var numberStyle = $(numberID).src; // getting numberStyle
+    var numberStyle = $(numberID).attr('src'); // getting numberStyle
     var tempStyle = document.getElementById("temp").innerHTML; // getting tempStyle
     var store = document.getElementById("temp1").innerHTML; // get number location
     document.getElementById(store).src = numberStyle; // setting store to number
@@ -82,7 +82,7 @@ function refreshPage() {
 }
 
 function stripJpg(value) {
-  var num = $(value).css("background-image");
+  var num = $(value).attr('src');
   num = num.match(/\d+/)[0];
   return num;
 }
