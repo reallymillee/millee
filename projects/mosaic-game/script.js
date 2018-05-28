@@ -7,9 +7,9 @@ window.onload = function randomNumbers() {
       rand = Math.floor(Math.random() * 25 + 1);
     } while (jQuery.inArray(rand, numbers) !== -1);
     numbers.push(rand);
-    var value = "num" + i;
+    var value = "#num" + i;
     var image = "projects/mosaic-game/" + rand + ".jpg";
-    document.getElementById(value).src = image;
+    $(value).attr('src') = image;
   }
   check();
 };
@@ -72,7 +72,7 @@ function check() {
     var i;
     for (i = 0; i < x.length; i++) {
       x[i].style.border = "none";
-      x[i].removeAttribute("onclick");
+      x[i].children("img").removeAttribute("onclick");
     }
   }
 }
