@@ -8,8 +8,8 @@ br {
 
 th {
   background-size: contain !important;
-  width: 128px;
-  height: 128px;
+  min-width: 128px;
+  min-height: 128px;
   padding: 1em !important;
 }
 
