@@ -8,8 +8,8 @@ window.onload = function randomNumbers() {
     } while (jQuery.inArray(rand, numbers) !== -1);
     numbers.push(rand);
     var value = "num" + i;
-    var image = "url('projects/mosaic-game/" + rand + ".jpg')";
-    document.getElementById(value).style.background = image;
+    var image = "projects/mosaic-game/" + rand + ".jpg";
+    document.getElementById(value).src = image;
   }
   check();
 };
@@ -29,14 +29,14 @@ function swapValues(number) {
   $(numberID).addClass("selected");
   var a = document.getElementById("temp").innerHTML; //check temp
   if (a == "") {
-    document.getElementById("temp").innerHTML = $(numberID).css("background"); // get number value
+    document.getElementById("temp").innerHTML = $(numberID).src; // get number value
     document.getElementById("temp1").innerHTML = number; // get number location
   } else {
-    var numberStyle = $(numberID).css("background"); // getting numberStyle
+    var numberStyle = $(numberID).src; // getting numberStyle
     var tempStyle = document.getElementById("temp").innerHTML; // getting tempStyle
     var store = document.getElementById("temp1").innerHTML; // get number location
-    document.getElementById(store).style.background = numberStyle; // setting store to number
-    document.getElementById(number).style.background = tempStyle; // setting number to temp
+    document.getElementById(store).src = numberStyle; // setting store to number
+    document.getElementById(number).src = tempStyle; // setting number to temp
     $(numberID).removeClass("selected");
     $("#" + store).removeClass("selected");
     document.getElementById("temp").innerHTML = "";
