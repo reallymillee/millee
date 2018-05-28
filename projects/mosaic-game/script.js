@@ -7,9 +7,9 @@ window.onload = function randomNumbers() {
       rand = Math.floor(Math.random() * 25 + 1);
     } while (jQuery.inArray(rand, numbers) !== -1);
     numbers.push(rand);
-    var value = "#num" + i;
-    console.log(value);
-    $(value).attr('src') = "projects/mosaic-game/" + rand + ".jpg";
+    var value = "num" + i;
+    console.log(value)
+    document.getElementById(value).src = "projects/mosaic-game/" + rand + ".jpg";
   }
   check();
 };
