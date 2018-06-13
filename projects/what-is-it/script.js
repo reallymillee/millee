@@ -55,7 +55,7 @@ function checkLeapYear() {
 
 function success(target) {
   if (($(target).hasClass("is-success")) === false) {
-    if ($(target).hasClass("is-danger")) {
+    if ($(target).hasClass("is-danger") === true) {
       $(target).removeClass("is-danger")
     }
     $(target).addClass("is-success");
@@ -64,7 +64,7 @@ function success(target) {
 
 function error(target) {
   if (($(target).hasClass("is-danger")) === false) {
-    if ($(target).hasClass("is-success")) {
+    if ($(target).hasClass("is-success") === true) {
       $(target).removeClass("is-success")
     }
     $(target).addClass("is-danger");
