@@ -2,8 +2,9 @@ var day;
 var month;
 var year;
 var leapYear;
-var error = false;
 var lastDay;
+var dayValid = true;
+var monthValid = true;
 
 function whatIsIt() {
   day = parseInt(document.getElementById("day").value);
@@ -35,14 +36,12 @@ function whatIsIt() {
       }
       break;
     default:
-      error = true;
+      monthValid = false;
       break;
   }
-  if (error === false) {
     if ((day < 1) || (day > lastDay)) {
-      error = true;
+      dayValid = false;
     }
-  }
   displayResults();
 };
 
@@ -54,8 +53,33 @@ function checkLeapYear() {
   }
 }
 
+function success(target) {
+  if (($(target).hasClass("is-success")) === false) {
+    if (($(target).hasClass("is-danger")) {
+        $(target).removeClass("is-danger")
+      }
+      $(target).addClass("is-success");
+    }
+  }
+
+function error(target) {
+  if (($(target).hasClass("is-danger")) === false) {
+    if (($(target).hasClass("is-success")) {
+      $(target).removeClass("is-success")
+    }
+    $(target).addClass("is-danger");
+  }
+}
+
 function displayResults() {
-  console.log(day, month, year, lastDay, leapYear, error);
-  document.getElementById("leapYear").innerHTML = leapYear;
-  document.getElementById("error").innerHTML = error;
+  if (dayValid === true) {
+    success("#day");
+  } else {
+    error("#day");
+  }
+  if (monthValid === true) {
+    success("#month");
+  } else {
+    error("#month");
+  }
 }
