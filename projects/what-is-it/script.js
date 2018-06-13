@@ -55,16 +55,16 @@ function checkLeapYear() {
 
 function success(target) {
   if (($(target).hasClass("is-success")) === false) {
-    if (($(target).hasClass("is-danger")) {
-        $(target).removeClass("is-danger")
-      }
-      $(target).addClass("is-success");
+    if ($(target).hasClass("is-danger")) {
+      $(target).removeClass("is-danger")
     }
+    $(target).addClass("is-success");
   }
+}
 
 function error(target) {
   if (($(target).hasClass("is-danger")) === false) {
-    if (($(target).hasClass("is-success")) {
+    if ($(target).hasClass("is-success")) {
       $(target).removeClass("is-success")
     }
     $(target).addClass("is-danger");
